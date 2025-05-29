@@ -1,0 +1,6 @@
+numpy
+dacite
+pyyaml
+cvxpy
+matplotlib
+ecos

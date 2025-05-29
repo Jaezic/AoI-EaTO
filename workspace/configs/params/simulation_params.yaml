@@ -1,0 +1,19 @@
+# simulation flow and algorithm parameters
+aoi_eato:
+  max_iterations: 2
+  convergence_threshold_seconds: 0.01 # total time change criterion
+
+ga: # Genetic Algorithm parameters
+  population_size: 50
+  num_generations: 100
+  mutation_rate: 0.05
+  crossover_rate: 0.8
+  selection_pressure_ratio: 0.2 # top % selection
+  aoi_tolerance: 20
+  energy_tolerance: 10000
+
+general:
+  aoi_limit_seconds: 50.0 # assume the same AoI limit for all areas
+  random_seed: 42 
+
+

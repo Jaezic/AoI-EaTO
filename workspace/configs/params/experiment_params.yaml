@@ -1,0 +1,86 @@
+# configs/experiment_params.yaml
+
+# visiting sequence (0-indexed area IDs)
+# must match num_areas value
+# fixed_visiting_sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+fixed_visiting_sequence: [10, 17, 19, 5, 7, 4, 11, 1, 6, 12, 9, 13, 2, 8, 3, 0, 18, 15, 14, 16]
+
+# initial speed (m/s)
+# must be (num_areas + 1) long (includes v0)
+# initial_speeds_mps: [30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0] # num_areas=5일 때 길이 6
+initial_speeds_mps: [15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0]
+
+# fixed data collection hovering position q_tilde (x, y) meters
+# each element is in [x, y] format. must match num_areas
+# indices match area_id
+fixed_hover_q_tilde_meters:
+  - [400.0, 450.0]    # Point 1
+  - [-790.0, -320.0]   # Point 2
+  - [-180.0, 770.0]   # Point 3
+  - [70.0, 200.0]    # Point 4
+  - [-650.0, -480.0]   # Point 5
+  - [70.0, -420.0]    # Point 6
+  - [-600.0, 100.0]   # Point 7
+  - [-210.0, -280.0]   # Point 8
+  - [160.0, 650.0]    # Point 9
+  - [-200.0, 180.0]   # Point 10
+  - [720.0, -280.0]   # Point 11
+  - [-180.0, -90.0]  # Point 12
+  - [-330.0, 170.0]   # Point 13
+  - [-480.0, 640.0]   # Point 14
+  - [240.0, 40.0]      # Point 15
+  - [110.0, 50.0]       # Point 16
+  - [550.0, 80.0]      # Point 17
+  - [790.0, -500.0]   # Point 18
+  - [680.0, 480.0]    # Point 19
+  - [390.0, -480.0]    # Point 20
+
+# fixed data transmission hovering position p_k (x, y) meters
+# each element is in [x, y] format. must match num_areas
+# indices match area_id
+fixed_hover_p_meters:
+  - [210.0, 230.0]    # Point 1
+  - [-260.0, -10.0]   # Point 2
+  - [0.0, 280.0]   # Point 3
+  - [70.0, 200.0]    # Point 4
+  - [-180.0, -90.0]   # Point 5
+  - [-120.0, -250.0]    # Point 6
+  - [-240.0, 200.0]   # Point 7
+  - [-200.0, -240.0]   # Point 8
+  - [70.0, 200.0]    # Point 9
+  - [-200.0, 180.0]   # Point 10
+  - [260.0, -110.0]   # Point 11
+  - [-180.0, -90.0]  # Point 12
+  - [-200.0, 180.0]   # Point 13
+  - [-170.0, 260.0]   # Point 14
+  - [240.0, 40.0]      # Point 15
+  - [110.0, 50.0]       # Point 16
+  - [250.0, 50.0]      # Point 17
+  - [210.0, -240.0]   # Point 18
+  - [110.0, 50.0]    # Point 19
+  - [150.0, -250.0]    # Point 20
+  # - [50.0, 0.0]    # area_id 0
+  # - [0.0, 50.0]    # area_id 1
+  # - [-50.0, 0.0]   # area_id 2
+  # - [0.0, -50.0]   # area_id 3
+  # - [30.0, 40.0]   # area_id 4
+  # - [-40.0, -30.0]   # area_id 5
+  # - [30.0, -40.0]   # area_id 6
+  # - [-30.0, 40.0]   # area_id 7
+  # - [-30.0, -40.0]   # area_id 8
+  # - [40.0, 30.0]   # area_id 9
+  # - [-40.0, -30.0]   # area_id 10
+  # - [30.0, 40.0]   # area_id 11
+  # - [-40.0, 30.0]   # area_id 12
+  # - [40.0, -30.0]   # area_id 13
+  # - [-30.0, -40.0]   # area_id 14
+  # - [30.0, -40.0]   # area_id 15
+  # - [-40.0, 30.0]   # area_id 16
+  # - [40.0, -30.0]   # area_id 17
+  # - [-30.0, 40.0]   # area_id 18
+  # - [30.0, 40.0]   # area_id 19
+  
+
+# initial slack variable lambda_m
+# must be the same length as initial_speeds_mps
+initial_slacks_lambda: [0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001]

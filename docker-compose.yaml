@@ -1,0 +1,20 @@
+services:
+  uav_aoi_eto_project:
+    container_name: uav_aoi_eto_project
+    build: .
+    privileged: true
+    network_mode: host
+    ipc: host
+    pid: host
+    volumes:
+      - ./workspace:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]

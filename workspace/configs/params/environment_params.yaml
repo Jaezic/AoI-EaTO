@@ -1,0 +1,30 @@
+# environment-specific parameters
+num_areas: 20
+gbs_altitude_hb_meters: 20.0
+area_radius_ra_meters: 25.0 # 10 -> 25
+initial_uav_position_s0_meters: [1000.0, 0.0] # [x, y]
+
+# monitoring area positions (NUM_AREAS)
+area_positions_wk_meters:
+  - [400.0, 450.0]    # Point 1
+  - [-790.0, -320.0]   # Point 2
+  - [-180.0, 770.0]   # Point 3
+  - [70.0, 200.0]    # Point 4
+  - [-650.0, -480.0]   # Point 5
+  - [70.0, -420.0]    # Point 6
+  - [-600.0, 100.0]   # Point 7
+  - [-210.0, -280.0]   # Point 8
+  - [160.0, 650.0]    # Point 9
+  - [-200.0, 180.0]   # Point 10
+  - [720.0, -280.0]   # Point 11
+  - [-180.0, -90.0]  # Point 12
+  - [-330.0, 170.0]   # Point 13
+  - [-480.0, 640.0]   # Point 14
+  - [240.0, 40.0]      # Point 15
+  - [110.0, 50.0]       # Point 16
+  - [550.0, 80.0]      # Point 17
+  - [790.0, -500.0]   # Point 18
+  - [680.0, 480.0]    # Point 19
+  - [390.0, -480.0]    # Point 20
+
+

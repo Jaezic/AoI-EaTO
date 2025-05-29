@@ -1,0 +1,42 @@
+# UAV hardware and model parameters
+speed:
+  max_vmax_mps: 40.0       # meters per second
+  min_init_vmin_mps: 5.0
+
+energy:
+  max_elimit_joule: 300000.0
+  propulsion_power_model: # equation 25
+    P0_watts: 79.86
+    P1_watts: 88.63
+    v_tip_mps: 120.0
+    v0_hover_mps: 4.03
+    d0_ratio: 0.6
+    rho_kg_per_m3: 1.225
+    s_solidity: 0.05
+    A_disc_m2: 0.503
+
+sensing:
+  zeta_parameter: 0.01
+  p_th_probability: 0.99
+  t_int_seconds: 1.0
+  uav_monitoring_range_ru_meters: 41.8 # 26.8 -> 41.8
+  data_collection_time_te_seconds: 10.0
+
+communication:
+  pu_transmit_power_dbm: 20.0
+  beta0_db: -60.0
+  noise_power_sigma2_dbm: -110.0
+  snr_gap_gamma_db: 8.2
+  path_loss_alpha: 2.2
+  los_params:
+    a: 10.0
+    b: 0.6
+  kappa_nlos: 0.2
+  plos_approx_probability: 0.7
+  snr_min_db: 5.0
+  d_min_comm_meters: 10.0
+  channel_bandwidth_B_mhz: 1.0
+  data_packet_size_Sk_mbits: 30.0
+
+altitude_hu_meters: 100.0
+
