@@ -1,19 +1,20 @@
-# UAV Trajectory Planning for Data Collection from Time-Constrained IoT Devices
+# AoI-EATO: UAV Trajectory Optimization for Time-Constrained Data Collection in UAV-Enabled Environmental Monitoring Systems
 
-This repository provides the first unofficial implementation of the paper "UAV Trajectory Planning for Data Collection from Time-Constrained IoT Devices" (IEEE Transactions on Wireless Communications 2019). You can find the paper on [IEEE Xplore](https://ieeexplore.ieee.org/document/8842600).
+This repository provides the first unofficial implementation of the paper "UAV Trajectory Optimization for Time-Constrained Data Collection in UAV-Enabled Environmental Monitoring Systems" (IEEE Internet of Things Journal 2022). You can find the paper on [IEEE Xplore](https://ieeexplore.ieee.org/document/9817083).
 
 ## Overview
 
 ![overview](./figs/overview.jpg)
 
-This project focuses on optimizing the trajectory of an Unmanned Aerial Vehicle (UAV) for collecting data from time-constrained Internet of Things (IoT) devices. The primary goal is to minimize the overall mission completion time while ensuring that the Age of Information (AoI) for each IoT device remains below a predefined threshold and the UAV's energy consumption stays within its limits.
+This project focuses on optimizing the trajectory of an Unmanned Aerial Vehicle (UAV) dispatched to a geographical area for collecting data from a set of **monitoring areas**. The collected data is time-constrained and needs to be transmitted to a Ground Base Station (GBS). The primary goal is to **minimize the UAV's overall mission completion time**. This optimization jointly considers the UAV's flying speeds, hovering positions (for data collection and transmission), and visiting sequence, while adhering to constraints on the **Age of Information (AoI)** of data from each monitoring area and the UAV's **on-board energy limitations**.
 
-The core of this implementation is the **AoI-EaTO (Age of Information - Energy and Time Optimized)** algorithm, which iteratively optimizes:
-1.  **UAV Speed**: Using Sequential Convex Approximation (SCA).
-2.  **Visiting Sequence**: Using a Genetic Algorithm (GA).
-3.  **Hovering Positions**: Using Sequential Convex Approximation (SCA) for both data collection and data transmission hovering spots.
+The core of this implementation is the **AoI-EaTO (Age of Information - and Energy-aware Trajectory Optimization)** algorithm, as proposed in the paper. This algorithm decomposes the main problem and iteratively optimizes:
+1.  **UAV Speed Optimization**: Using a Successive Convex Approximation (SCA) method-based algorithm.
+2.  **UAV Path Optimization**:
+    *   **Visiting Sequence**: Using a Genetic Algorithm (GA)-based algorithm.
+    *   **Hovering Positions**: Using an SCA method-based algorithm for both data collection (`q̃_k`) and data transmission (`p_k`) hovering spots.
 
-The project also includes implementations for baseline comparison algorithms like "Random" sequence and "Greedy" sequence.
+The project also includes implementations for baseline comparison algorithms, such as "Random" visiting sequence and "Greedy" visiting sequence, to evaluate the performance of the AoI-EaTO algorithm.
 
 ## Setup & Getting Started
 
@@ -98,11 +99,12 @@ This is the recommended way to run the simulation.
 ![image5](./figs/image5.png)
 ![image6](./figs/image6.png)
 
-The simulation results demonstrate the effectiveness of the AoI-EaTO algorithm in finding an optimized UAV trajectory. Key outcomes include:
-*   Optimized visiting sequence for the UAV.
-*   Calculated optimal speeds for different segments of the UAV's path.
-*   Determined optimal hovering locations for data collection and transmission.
-*   Logs detailing mission time, energy consumption, and AoI for the UAV.
-*   Visualizations of the UAV trajectory, UAV locations, and communication ranges.
+The simulation results aim to demonstrate the effectiveness of the AoI-EaTO algorithm in finding an optimized UAV trajectory that minimizes mission completion time while satisfying AoI and energy constraints. Key outcomes from the simulation, mirroring the paper's findings, include:
+*   An optimized **visiting sequence** (`π*`) for the UAV to service the monitoring areas.
+*   Calculated optimal **flying speeds** (`v_m^*`) for different segments of the UAV's path.
+*   Determined optimal **hovering locations** for data collection (`q̃_k^*`) and data transmission (`p_k^*`).
+*   Detailed logs and outputs quantifying the **mission completion time (T)**, **total energy consumption (E_all)**, and the **maximum AoI (AoI_max^k)** for data from each monitoring area.
+*   Visualizations of the UAV trajectory, hovering positions, GBS location, monitoring areas, and potentially communication/sensing ranges, similar to figures presented in the paper.
+*   Analysis of how the **AoI limitation threshold** and the **UAV's on-board energy** impact the achievable mission performance.
 
 *(This section can be expanded with specific graphs, figures, or key performance indicators from your experiments once available. The `results/` directory is intended for storing such outputs, like trajectory plots.)*
